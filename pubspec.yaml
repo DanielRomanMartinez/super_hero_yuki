@@ -1,0 +1,38 @@
+name: super_hero_yuki
+description: A Yuki Project
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.16.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  freezed_annotation:
+  equatable: ^2.0.3
+  flutter_bloc: ^8.0.1
+  get_it: 7.2.0
+  injectable: 1.5.3
+  http: ^0.13.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  bloc_test: ^9.0.3
+  test:
+  faker: ^2.0.0
+  mockito: 5.2.0
+
+  build_runner:
+  injectable_generator: 1.5.2
+  freezed: 1.1.0
+
+  very_good_analysis: 2.4.0
+  dart_code_metrics: 4.15.2
+
+  flutter_lints: ^1.0.0
+
+flutter:
+  uses-material-design: true
