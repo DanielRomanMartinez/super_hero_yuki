@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:super_hero_yuki/domain/model/objects/super_hero.dart';
 import 'package:super_hero_yuki/ui/common/top_bar/common_top_bar.dart';
+import 'package:simple_html_css/simple_html_css.dart';
 
 class SuperHeroDetailParams {
   final SuperHero superHero;
@@ -35,18 +36,52 @@ class SuperHeroDetailsScreen extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 20),
-                Text(
-                  superHero.name,
-                  style: const TextStyle(fontSize: 24),
-                  textAlign: TextAlign.center,
+                Center(
+                  child: Text(
+                    superHero.name,
+                    style: const TextStyle(fontSize: 24),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
                 const SizedBox(height: 20),
                 Center(
                   child: Image.network(superHero.image),
                 ),
                 const SizedBox(height: 20),
+                RichText(
+                  textAlign: TextAlign.center,
+                  text: HTML.toTextSpan(
+                    context,
+                    '<b>Full name: </b>${superHero.fullName}',
+                    defaultTextStyle: const TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal,
+                      decoration: TextDecoration.none,
+                    ),
+                    overrideStyle: {
+                      'b': const TextStyle(fontWeight: FontWeight.bold)
+                    },
+                  ),
+                ),
+                const SizedBox(height: 20),
+                RichText(
+                  textAlign: TextAlign.center,
+                  text: HTML.toTextSpan(
+                    context,
+                    '<b>Place Of Birth: </b>${superHero.placeOfBirth}',
+                    defaultTextStyle: const TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal,
+                      decoration: TextDecoration.none,
+                    ),
+                    overrideStyle: {
+                      'b': const TextStyle(fontWeight: FontWeight.bold)
+                    },
+                  ),
+                ),
               ],
             ),
           ),
