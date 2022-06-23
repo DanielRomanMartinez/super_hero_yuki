@@ -6,7 +6,7 @@ class Response extends Equatable {
   final String body;
   final Map<String, String> headers;
 
-  Response({
+  const Response({
     required this.statusCode,
     required this.body,
     required this.headers,

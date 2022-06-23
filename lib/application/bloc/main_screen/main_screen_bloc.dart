@@ -21,6 +21,7 @@ class MainScreenBloc extends Bloc<MainScreenEvent, MainScreenState> {
   }
 
   void _handleLoadSuperHeroes(_, Emitter<MainScreenState> emit) async {
+    // TODO: Try Catch --> Catch log error to somewhere eg firebase crashlytics
     emit(MainScreenSuperHeroesLoaded(superHeroes: await _superHeroService.readAll()));
   }
 }
