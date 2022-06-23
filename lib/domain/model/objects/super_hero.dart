@@ -40,6 +40,8 @@ class SuperHero extends Equatable {
         map['placeOfBirth'] is! String ||
         map['image'] is! String) throw MalformedSuperHeroMapException(map);
 
+    // TODO: Check if image is a valid URL, otherwise throw MalformedSuperHeroMapException
+
     return SuperHero(
       id: map['id'],
       name: map['name'],
