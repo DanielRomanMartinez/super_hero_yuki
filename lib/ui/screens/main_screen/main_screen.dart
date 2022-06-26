@@ -34,7 +34,9 @@ class MainScreen extends StatelessWidget {
                     return SuperHeroesList(superHeroes: state.superHeroes);
                   }
 
-                  return const Text('Loading...');
+                  return const Center(
+                      child:
+                          CircularProgressIndicator(color: Color(0xffe04815)));
                 }),
           ),
         ),
