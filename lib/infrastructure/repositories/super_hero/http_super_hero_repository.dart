@@ -39,8 +39,7 @@ class HttpSuperHeroRepository implements SuperHeroRepository {
 
       return superHeroes;
     } else {
-      throw Exception(
-          'Failed to load super heroes'); // TODO: Throw custom exception
+      throw const SuperHeroesNotFoundException();
     }
   }
 }

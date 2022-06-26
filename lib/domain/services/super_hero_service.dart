@@ -11,6 +11,10 @@ class SuperHeroService {
   );
 
   Future<List<SuperHero>> readAll() async {
-    return await _superHeroRepository.readAll();
+    try {
+      return await _superHeroRepository.readAll();
+    } catch (_) {
+      rethrow;
+    }
   }
 }
